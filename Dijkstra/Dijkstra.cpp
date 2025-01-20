@@ -65,28 +65,31 @@ void Dijkstra(int startPoint, int endPoint, int(&newGraph)[12][12])
                 currentNode = i;
             }
         }
-        int u = currentNode;
+        int u = openNodes[currentNode];
         openNodes.erase(openNodes.begin() + currentNode);
 
         //for (int i = 0; i < openNodes.size(); i++)
         //{
             for (int j = 0; j < 12; j++)
             {
-                if (newGraph[openNodes[u]][j] > 0 && newGraph[openNodes[u]][j] != inf)
+                if (newGraph[u][j] > 0 && newGraph[openNodes[u]][j] != inf)
                 {
-                    int alt = dist[currentNode] + newGraph[openNodes[u]][j];
+                    int alt = dist[currentNode] + newGraph[u][j];
 
                     if (alt < dist[j]) 
                     {
                         dist[j] = alt;
-                        prev[j] = openNodes[u];
-                        std::cout << alph[dist[j]] + ", " + alph[prev[j]] + "\n";
+                        prev[j] = u;
+                        
                     }
                 }
             }
-        //}
+            
     }
-
+            for (int i = 0; i < 12; i++)
+            {
+                std::cout << alph[dist[i]] + ", " + alph[prev[i]] + "\n";
+            }
     result = dist[startPoint], prev[startPoint];
     std::cout << result + "\n";
     /*std::cout << alph[dist[startPoint]] + ", " + alph[prev[endPoint]];*/
