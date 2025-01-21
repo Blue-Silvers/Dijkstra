@@ -24,26 +24,38 @@ inf,    inf,     inf,    5,      inf,    inf,    0,      2,      3,      inf,   
 inf,    inf,     inf,    inf,    inf,    10,     inf,    0,      4,      7,      inf,    inf, //H
 inf,    inf,     inf,    inf,    inf,    5,      inf,    inf,    0,      inf,    inf,    inf, //I
 inf,    inf,     inf,    inf,    inf,    1,      inf,    inf,    9,      0,      inf,    inf, //J
-inf,    inf,     inf,    inf,    8,      inf,    inf,    inf,    inf,    inf,    0,      5, //K
-inf,    inf,     inf,    inf,    inf,    inf,    inf,    12,     inf,    inf,    inf,    0, //L
+inf,    inf,     3,      inf,    8,      inf,    inf,    inf,    inf,    inf,    0,      5, //K
+inf,    6,       inf,    inf,    inf,    inf,    inf,    12,     inf,    inf,    inf,    0, //L
 };
 
 int result = 0;
 std::string alph[26] = { "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" };
+void DrawPath(int actualIndex, int startIndex);
 void Dijkstra(int startPoint, int endPoint, int(&newGraph)[12][12]);
+int dist[12];
+int prev[12];
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    Dijkstra(0, 9, newGraph);//AKCJ or ABGHJ
+    Dijkstra(0, 9, newGraph);
+    // A(0) 7 K(10) 10 C(2) 12 J(9) 
+    // or 
+    // A(0) 2 B(1) 3 G(6) 5 H(7) 12 J(9)
     
 }
 
+void DrawPath(int actualIndex, int startIndex) //recurssive
+{
+    std::cout << " > " << alph[actualIndex] << " | " << dist[actualIndex];
+
+    if (actualIndex != startIndex) {
+        DrawPath(prev[actualIndex], startIndex);
+    }
+}
 
 void Dijkstra(int startPoint, int endPoint, int(&newGraph)[12][12])
 {
-    int dist[12];
-    int prev[12];
+
 
     std::vector<int> openNodes;
 
@@ -58,21 +70,22 @@ void Dijkstra(int startPoint, int endPoint, int(&newGraph)[12][12])
     while (!openNodes.empty())
     {
         int currentNode = startPoint;
+        int min = inf;
         for (int i = 0; i < openNodes.size(); i++)
         {
-            if (dist[i] < dist[currentNode]) 
+            if (dist[openNodes[i]] < min)
             {
                 currentNode = i;
+                min = dist[openNodes[i]];
             }
         }
         int u = openNodes[currentNode];
         openNodes.erase(openNodes.begin() + currentNode);
+        currentNode = u;
 
-        //for (int i = 0; i < openNodes.size(); i++)
-        //{
             for (int j = 0; j < 12; j++)
             {
-                if (newGraph[u][j] > 0 && newGraph[openNodes[u]][j] != inf)
+                if (newGraph[u][j] != inf && u != j)
                 {
                     int alt = dist[currentNode] + newGraph[u][j];
 
@@ -84,13 +97,14 @@ void Dijkstra(int startPoint, int endPoint, int(&newGraph)[12][12])
                     }
                 }
             }
-            
     }
-            for (int i = 0; i < 12; i++)
-            {
-                std::cout << alph[dist[i]] + ", " + alph[prev[i]] + "\n";
-            }
-    result = dist[startPoint], prev[startPoint];
-    std::cout << result + "\n";
-    /*std::cout << alph[dist[startPoint]] + ", " + alph[prev[endPoint]];*/
+
+    DrawPath(endPoint, startPoint);
+            //for (int i = 0; i < 12; i++)
+            //{
+            //    if (prev[i] >= 0) 
+            //    {
+            //        std::cout << alph[prev[i]] << ", " << dist[i] << "\n";
+            //    }
+            //}
 }

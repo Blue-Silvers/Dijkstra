@@ -7,10 +7,7 @@
       "RelativeMoniker": "D:0:0:{81C233DB-54D0-43FF-B67A-4900F123D943}|Dijkstra\\Dijkstra.vcxproj|solutionrelative:Dijkstra\\Dijkstra.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{81C233DB-54D0-43FF-B67A-4900F123D943}|Dijkstra\\Dijkstra.vcxproj|C:\\VISUALSTUDIO\\VC\\TOOLS\\MSVC\\14.40.33807\\INCLUDE\\VECTOR||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{81C233DB-54D0-43FF-B67A-4900F123D943}|Dijkstra\\Dijkstra.vcxproj|C:\\VISUALSTUDIO\\VC\\TOOLS\\MSVC\\14.40.33807\\INCLUDE\\XSTRING||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\VisualStudio\\VC\\Tools\\MSVC\\14.40.33807\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,7 +17,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -37,26 +34,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "xstring",
-              "DocumentMoniker": "C:\\VisualStudio\\VC\\Tools\\MSVC\\14.40.33807\\include\\xstring",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\VisualStudio\\VC\\Tools\\MSVC\\14.40.33807\\include\\xstring",
-              "ToolTip": "C:\\VisualStudio\\VC\\Tools\\MSVC\\14.40.33807\\include\\xstring",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\VisualStudio\\VC\\Tools\\MSVC\\14.40.33807\\include\\xstring",
-              "ViewState": "AQIAADMQAAAAAAAAAAAUwEYQAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-20T12:02:11.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Dijkstra.cpp",
               "DocumentMoniker": "C:\\Users\\enzo.lahana\\source\\repos\\Dijkstra\\Dijkstra\\Dijkstra.cpp",
               "RelativeDocumentMoniker": "Dijkstra\\Dijkstra.cpp",
               "ToolTip": "C:\\Users\\enzo.lahana\\source\\repos\\Dijkstra\\Dijkstra\\Dijkstra.cpp",
               "RelativeToolTip": "Dijkstra\\Dijkstra.cpp",
-              "ViewState": "AQIAABMAAAAAAAAAAAAiwCoAAAANAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAewGQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-20T08:56:44.989Z",
               "EditorCaption": ""
